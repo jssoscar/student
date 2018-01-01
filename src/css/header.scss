@@ -1,0 +1,58 @@
+.header-container {
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        background: url('../img/logo.svg') center center; // animation: App-logo-spin infinite 20s linear;
+        height: 64px;
+        width: 80px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .notice {
+        font-size: 20px;
+        line-height: 64px;
+        cursor: pointer;
+        transition: all .3s, padding 0s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .acount {
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .avatar {
+            margin: 20px 8px 20px 0;
+            background: rgba(255, 255, 255, .85);
+            vertical-align: middle;
+        }
+
+        .menu{
+            padding: 10px;
+        }
+
+        .icon{
+            margin-right: 6px;
+        }
+    }
+}
+
+.footer{
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+/*
+ * @Author			jishengsheng
+ * @Date			2017-12-24 22:59:16 
+ * @Version			1.0 
+ * @Description	
+ */
+
+@import '~antd/dist/antd.css';
+@import './login.scss';
+@import './header.scss';
+@import './menu.scss';
+@import './content.scss';
+@import './footer.scss';
+@import './exception.scss';
+
+body{
+    background-color: #f0f2f5;
+}
+
+.mr-20{
+    margin-right: 20px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
