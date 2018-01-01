@@ -30,11 +30,11 @@ class AddOrEdit extends Component{
 
             this.confirmLoading = true;
 
-            post('/teacher/student/add', {
+            post(`/teacher/student/${props.add ? 'add' : 'edit'}`, {
                 ...props.data,
                 ...values
             }).then(() => {
-                message.success('学生添加成功！');
+                message.success('学生操作成功！');
                 this.cancel(true);
             }, () => {
                 this.confirmLoading = false;
@@ -49,7 +49,7 @@ class AddOrEdit extends Component{
 
     render() {
         const {props} = this,
-            {form, data} = props,
+            {form, data, add} = props,
             {getFieldDecorator} = form,
             formItemProps = {
                 labelCol: {
@@ -74,7 +74,7 @@ class AddOrEdit extends Component{
 
         return <Modal
             visible
-            title="新增人员"
+            title={add ? '新增学生' : '编辑学生'}
             onOk={this.confirm}
             confirmLoading={this.confirmLoading}
             onCancel={this.cancel}>

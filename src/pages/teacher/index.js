@@ -36,6 +36,8 @@ class Teacher extends React.Component{
 
     @observable dealData = {};
 
+    isAdd = true;
+
     componentWillMount() {
         this.query();
     }
@@ -59,9 +61,10 @@ class Teacher extends React.Component{
             });
     }
 
-    @action addOrEdit = (data = {} ) => {
+    @action addOrEdit = (data = {}, isAdd = true ) => {
         this.dealData = data;
         this.addOrEditVisible = true;
+        this.isAdd = isAdd;
     }
 
     @action delStudent = data => {
@@ -138,7 +141,7 @@ class Teacher extends React.Component{
                 width: 190,
                 render: (val, data) => {
                     return <div>
-                        <Button className="mr-20" size="small" type="primary" icon="edit" onClick={() => this.addOrEdit(data)}>编辑</Button>
+                        <Button className="mr-20" size="small" type="primary" icon="edit" onClick={() => this.addOrEdit(data, false)}>编辑</Button>
                         <Button size="small" type="danger" icon="delete" onClick={() => this.delStudent(data)}>删除</Button>
                     </div>
                 }
@@ -201,7 +204,7 @@ class Teacher extends React.Component{
                 <Table columns={columns} dataSource={addKey(this.listData)} bordered
                         onChange={this.tableChange} pagination={pagination} />
                 {
-                    this.addOrEditVisible && <AddOrEdit data={this.dealData} close={refresh => this.addOrEditClose(refresh)}/>
+                    this.addOrEditVisible && <AddOrEdit data={this.dealData} add={this.isAdd} close={refresh => this.addOrEditClose(refresh)}/>
                 }
             </Spin>
         </div>
