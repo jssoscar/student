@@ -51,6 +51,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "dev" : "node scripts/start.js --proxy http://localhost:8080",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
@@ -102,6 +103,8 @@
     "babel-preset-stage-1": "^6.24.1",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6"
+    "request": "^2.83.0",
+    "sass-loader": "^6.0.6",
+    "yargs": "^10.0.3"
   }
 }
