@@ -13,20 +13,12 @@ const teacher = require('./teacher');
 
 const student = require('./student');
 
-const yargs = require('yargs');
-
-const shouldProxy = !!yargs.argv.proxy;
-
 /**
- * @author 熊建
- * @email xiongjian@didichuxing.com
- * @create date 2017-11-09 02:55:20
- * @modify date 2017-11-09 02:55:20
- * @desc [description]
  */
 const request = require('request');
+
 const argv = require('yargs').argv;
-//是否设置代理
+
 const isProxy = !!argv.proxy;
 
 /**
